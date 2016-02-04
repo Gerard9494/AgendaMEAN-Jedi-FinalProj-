@@ -1,4 +1,4 @@
-var models = [ './modelo_Arma', './modelo_Libro', './modelo_Puerta', './modelo_Craftworld', './modelo_User'];
+var models = ['./userModel'];
 
 /**
  Funcion para inicializar los modulos, basado en el array definido arriba 
