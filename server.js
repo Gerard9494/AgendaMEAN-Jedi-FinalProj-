@@ -24,17 +24,9 @@ app.use(bodyParser.json());
 
 // Importamos los módulos enrutadores
 
-// del recurso 'users'
-var adminRouter = require('./routes/admin');
-
-// de la autenticación (urls que servirán para hacer login)
-var eldarRouter = require('./routes/eldar');
-
 var authRouter = require('./routes/authenticate');
 
 // Y los usamos para los caminos que toquen
-app.use('/admin',  adminRouter);
-app.use('/eldar', eldarRouter);
 app.use('/authenticate', authRouter);
 
 http.createServer(app).listen(8080);
