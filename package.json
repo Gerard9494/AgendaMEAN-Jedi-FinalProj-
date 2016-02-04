@@ -1,0 +1,29 @@
+{
+  "name": "t",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "bcrypt": "^0.8.5",
+    "express-jwt": "^3.3.0",
+    "fs": "0.0.2",
+    "jsonwebtoken": "^5.5.4",
+    "mongoose": "^4.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gerard9494/AgendaMEAN-Jedi-FinalProj-.git"
+  },
+  "author": "Gerard Duch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gerard9494/AgendaMEAN-Jedi-FinalProj-/issues"
+  },
+  "homepage": "https://github.com/Gerard9494/AgendaMEAN-Jedi-FinalProj-#readme"
+}
