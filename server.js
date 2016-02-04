@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 // Importamos los módulos enrutadores
 
-var authRouter = require('./routes/authenticate');
+var authRouter = require('./routes/authenticate.router');
 
 // Y los usamos para los caminos que toquen
 app.use('/authenticate', authRouter);
