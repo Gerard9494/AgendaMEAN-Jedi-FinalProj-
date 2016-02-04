@@ -24,7 +24,7 @@ authRouter.post('/login', function(req, res, next) {
 
         UserModel.findOne({ identificador: id, password: contraseña_encriptada}, function(err, user) {
             if (err) res.status(500).send(err);
-            
+
             if (!user) res.status(401).send('El usuario o la contraseña es incorrecta');
             else {
                 // Generamos el token con el modulo jwt.
