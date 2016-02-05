@@ -25,7 +25,7 @@ router.get('/agendas', function(req, res) {
 
             AdressBookModel.find({ _id: {$in: user.adressBooks} }, function(err, agendas) {
                 if (err) res.status(500).json(err);
-                else res.status(200).json(agendas); 
+                else res.status(200).json(agendas);
             });
 
             res.status(200).json(user.adressBooks);
