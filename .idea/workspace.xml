@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/user.model.js" afterPath="$PROJECT_DIR$/server/models/user.model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/adressBook.router.js" afterPath="$PROJECT_DIR$/server/routes/adressBook.router.js" />
     </list>
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adressBook.router.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adressBook.router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/routes/adressBook.router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.34793815">
+              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -44,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.model.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15463917">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
@@ -91,8 +90,8 @@
         <option value="$PROJECT_DIR$/server/config.js" />
         <option value="$PROJECT_DIR$/server/routes/authenticate.router.js" />
         <option value="$PROJECT_DIR$/server/routes/register.router.js" />
-        <option value="$PROJECT_DIR$/server/routes/adressBook.router.js" />
         <option value="$PROJECT_DIR$/server/models/user.model.js" />
+        <option value="$PROJECT_DIR$/server/routes/adressBook.router.js" />
       </list>
     </option>
   </component>
@@ -363,18 +362,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/authenticate.router.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/adressBook.router.js">
+    <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/authenticate.router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -387,10 +394,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
+    <entry file="file://$PROJECT_DIR$/server/routes/adressBook.router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15463917">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.34793815">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
           <folding />
         </state>
       </provider>
