@@ -27,7 +27,6 @@ router.get('/agendas', function(req, res) {
                 if (err) res.status(500).json(err);
                 else res.status(200).json(agendas);
             });
-
             res.status(200).json(user.adressBooks);
         }
     });
