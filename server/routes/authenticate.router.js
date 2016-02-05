@@ -1,6 +1,7 @@
 // Necesitamos obtener el secret para poder generar el token
 var secret = require('../config').jwt_secret;
 var authRouter = require('express').Router();
+var async = require('async');
 
 // Este módulo lo utilizaremos para generar el token
 var jwt = require('jsonwebtoken');
@@ -15,42 +16,45 @@ var UserModel = mongoose.model('UserModel');
  * aquellas que requieran de login.
  */
 authRouter.post('/login', function(req, res, next) {
-    var id = req.body.identificador;
-    var codeSeg = req.body.codigo_seguridad;
+    var name = req.body.name;
+    var password = req.body.password;
 
-    bcrypt.hash(codeSeg, 12, function(error, contraseña_encriptada) {
-        //guardem password encrpt.
-        console.log(contraseña_encriptada);
-
-        UserModel.findOne({ identificador: id, password: contraseña_encriptada}, function(err, user) {
-            if (err) res.status(500).send(err);
-
-            if (!user) res.status(401).send('El usuario o la contraseña es incorrecta');
+    async.waterfall([
+        function(callback) {
+            // Buscamos el usuario en la BD
+            UserModel.findOne({ name: name }, callback);
+        },
+        function(user, callback) {
+            // Si no existe respondemos con error
+            if (!user) res.status(404).send("El usuario no existe");
+            // Sino comparamos la contraseña `a pelo` que nos ha enviado el cliente
+            // con la encriptada que habia en la BD
+            else bcrypt.compare(password, user.password, callback);
+        },
+        function(equalPasswords, callback) {
+            // Si no son iguales respondemos con error
+            if (!equalPasswords) res.status(401).send("Contraseña incorrecta");
             else {
-                // Generamos el token con el modulo jwt.
-                // Le pasamos como primer parámetro el documento del usuario
-                // Y como segundo el secret (string que solo concemos nosotros)
-                // Ver fichero config.js para más info
-                console.log(user);
-                var token = jwt.sign(user.toObject(), secret, {
-                    expiresInMinutes: 1440 // Este token expirará en 24h
-                });
+                // Si no creamos el token con info de username y password
+                // (no ponemos el array de tareas porque podría ser grande,
+                // y nos interesa mantener el token pequeñito)
+                // y le pasamos tambien el string secreto que tenemos en config.js
+                // y le ponemos que expire al cabo de 1 día
 
-                // Notad que esto nos libra de guardar cualquier estado en el servidor.
-                // Un usuario está autenticado si tiene un token válido que podamos
-                // verificar que hemos dado nosotros (con el middleware express_jwt)
-                // y que no haya expirado. La información del momento exacto de expiración
-                // se guarda en el token en sí, por lo tanto no guardamos ningún estado
-                // en la memoria del servidor.
-
-                // Le enviamos el token al cliente
-                res.json({
-                    token: token
-                });
+                // Ahora no hay que hacer toObject porque ya es un objeto javascript
+                // No como antes que era una instancia de un modelo de mongoose
+                var token = jwt.sign(
+                    { name: name, password: password },
+                    config.JWT_SECRET,
+                    { expiresInSeconds: 24*60*60 } // 1 día
+                );
+                // Y se lo devolvemos al cliente
+                res.status(200).send({ token: token });
             }
-        });
-
-
+        }
+    ], function(error) {
+        // Si ha habido error en alguna de las callbacks, devolvemos error
+        if (error) res.status(500).json(error);
     });
 });
 

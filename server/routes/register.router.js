@@ -5,17 +5,36 @@ var userRouter = require('express').Router();
 var jwt_secret = require('../config').jwt_secret;
 var express_jwt = require('express-jwt');
 
-userRouter.post('/login/register', function(req, res, next) {
+userRouter.post('/register', function(req, res, next) {
+
+    // Comprobamos que nos ha indicado una contraseña y username
+    if (!req.body.username || !req.body.password) {
+        res.status(500).send("Debes especificar usuario y contraseña");
+        return;
+    }
+
     bcrypt.hash(req.body.password, 12, function(error, contraseña_encriptada) {
+
+        if (err) res.status(500).json(err);
+
         //guardem password encrpt.
         console.log(contraseña_encriptada);
         var user = new User(req.body);
 
         user.password = contraseña_encriptada;
 
-        user.save(function(err, newEldar) {
+        user.save(function(err, savedUser) {
             if (err) res.status(500).send(err);
-            else res.status(200).json({ user: newUser });
+            else {
+                // No queremos enviar el password de vuelta al cliente
+                // Para ello hay que hacer un toObject y un delete
+                // Porqué? porque realmente saved_user no es un objeto
+                // javascript, sino una instancia del modelo Usuario
+                savedUser = savedUser.toObject();
+                delete savedUser.password;
+                // Devolvemos el documento guardado
+                res.status(200).json(saved_user);
+            }
         });
 
         /*

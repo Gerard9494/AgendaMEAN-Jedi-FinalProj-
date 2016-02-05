@@ -13,6 +13,21 @@
 // codificada una información que solo conocemos nosotros y nadie más nos
 // asegura que nadie excepto nosotros va a poder descodificarlo y obtener
 // la información codificada en él (username y password).
-exports.jwt_secret = "S0m3ultr4s3cur3s3cr3t";
+var winston = require('winston');
 
-exports.db_path = 'mongodb://localhost/aprRest';
+module.exports = {
+    PORT: 8080,
+    DB_URI: "mongodb://localhost/app_tareas",
+    WINSTON_LOGGER_OPTS: {
+        transports: [
+            new winston.transports.Console({
+                colorize: true
+            })
+        ],
+        msg: "HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms",
+        expressFormat: true,
+        meta: false,
+        colorStatus: true
+    },
+    JWT_SECRET: "WQ4bFhoZ9EAuemlAEnSO"
+}
