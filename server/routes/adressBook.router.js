@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var express_jwt = require('express-jwt');
 var config = require('../config');
+var ObjectId = require('mongoose').Types.ObjectId;
+
 
 var router = require('express').Router();
 
@@ -46,25 +48,41 @@ router.post('/newAdressBook', function(req, res) {
 });
 
 // Modificar agenda
-router.patch('/tareas/:id', function(req, res) {
+router.patch('/updateAdressBook/:id', function(req, res) {
     //comprobar que el ususario tenga la agenda que quiere modificar
     //modificar la agenda
+    var abId = req.params.id;
     UserModel.findOne({ name: req.user.name }, function(err, user) {
         if (err) res.status(500).json(err);
+        else if (!user.adressBooks.contains(abId)) res.status(500).json("No tiene la agenda solicitada");
         else {
-            AdressBookModel.find({ _id: {$in: user.adressBooks} }, function(err, agendas) {
+            var abData = req.body;
+            AdressBookModel.update({_id: abId}, {$set: abData}, function(err, agenda) {
                 if (err) res.status(500).json(err);
-                else res.status(200).json(agendas);
+                else res.status(200).json(agenda);
             });
         }
     });
-
 });
 
 // Borrar agenda
+router.delete('/deleteAdressBook/:id', function(req, res) {
+    var abId = req.params.id;
+    UserModel.findOne({ name: req.user.name }, function(err, user) {
+        if (err) res.status(500).json(err);
+        else if (!user.adressBooks.contains(abId)) res.status(500).json("No tiene la agenda solicitada");
+        else {
+            var abData = req.body;
+            AdressBookModel.remove({_id: new ObjectId(abId)}, function(err){
+                if(!err) {
+                    res.status(200).end();
+                }
+            });
+        }
+    });
+});
 
-
-
+module.exports = router;
 
 
 
