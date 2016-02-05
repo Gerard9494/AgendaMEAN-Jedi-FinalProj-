@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config.js" afterPath="$PROJECT_DIR$/server/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/user.model.js" afterPath="$PROJECT_DIR$/server/models/user.model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/authenticate.router.js" afterPath="$PROJECT_DIR$/server/routes/authenticate.router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/register.router.js" afterPath="$PROJECT_DIR$/server/routes/register.router.js" />
     </list>
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/server/routes/authenticate.router.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="46" />
+              <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -41,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.09664948">
-              <caret line="5" column="87" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
+              <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -103,8 +100,8 @@
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/server/routes/register.router.js" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/routes/authenticate.router.js" />
         <option value="$PROJECT_DIR$/server/models/user.model.js" />
+        <option value="$PROJECT_DIR$/server/routes/authenticate.router.js" />
       </list>
     </option>
   </component>
@@ -378,7 +375,7 @@
     <entry file="file://$PROJECT_DIR$/server/routes/authenticate.router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="46" />
+          <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
           <folding />
         </state>
       </provider>
@@ -386,7 +383,7 @@
     <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09664948">
-          <caret line="5" column="87" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
+          <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
           <folding />
         </state>
       </provider>
