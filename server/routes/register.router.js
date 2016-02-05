@@ -14,15 +14,11 @@ userRouter.post('/register', function(req, res, next) {
     }
 
     bcrypt.hash(req.body.password, 12, function(error, contraseña_encriptada) {
-
         if (err) res.status(500).json(err);
-
         //guardem password encrpt.
-        console.log(contraseña_encriptada);
+        console.log("Contraseña encriptada: "+contraseña_encriptada);
         var user = new User(req.body);
-
         user.password = contraseña_encriptada;
-
         user.save(function(err, savedUser) {
             if (err) res.status(500).send(err);
             else {
