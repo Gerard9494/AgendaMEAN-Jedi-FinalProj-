@@ -25,7 +25,7 @@ router.get('/adressBook', function(req, res) {
         else {
             AdressBookModel.find({ _id: {$in: user.adressBooks} }, function(err, agendas) {
                 if (err) res.status(500).json(err);
-                else res.status(200).json(agendas);
+                else res.status(200).json(agendas); //devolvemos toda la info de las agendas que tiene el usuario
             });
         }
     });
@@ -82,7 +82,7 @@ router.delete('/deleteAdressBook/:id', function(req, res) {
     });
 });
 
-module.exports = router; 
+module.exports = router;
 
 
 
