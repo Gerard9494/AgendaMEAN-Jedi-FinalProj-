@@ -1,35 +1,92 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+// Module requires
+
 var http = require('http');
+var express = require('express');
+var expressWinston = require('express-winston');
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var colors = require('colors');
+var compression = require('compression');
+var cors = require('cors');
 
-// Módulo que usaremos para obtener el middleware de la autenticación
-var express_jwt = require('express-jwt');
+// Config require, models init and routes require
 
-var models = require('./models');
+var config = require('./server/config');
+require('./server/models').init();
+var routers = require('./server/routers');
 
-// config.js es un fichero con constantes
-var config = require('./config');
 
-// Conectamos a la BD
-mongoose.connect(config.db_path);
+// Database connection
 
-// Inicializamos los modelos
-models.initialize();
+mongoose.connect(config.DB_URI, function(error, connected) {
+    if (error) {
+        console.error(error.red);
+        process.exit(1);
+    }
+    else console.log("Successfully connected to database".green);
+});
+
+
+// Routing and middleware definitions
 
 var app = express();
 
-// Middleware que parsea el body
+// Middleware
+
+// Middleware para loguear las peticiones que nos lleguen a la consola
+app.use(expressWinston.logger(config.WINSTON_LOGGER_OPTS));
+
+// Middleware para comprimir la respuesta de la petición y que ocupe menos,
+// haciendo la transmisión de datos más ligera y rápida
+app.use(compression());
+
+// Middleware para permitir cross-origin requests en el cliente 
+// (poder bajar recursos de otros servidores que no sean este que programamos)
+app.use(cors());
+
+// Middleware para parsear el body (req.body) en un objeto javascript
 app.use(bodyParser.json());
 
-// Importamos los módulos enrutadores
+// Con este middleware que nos da express
+// podemos servir los ficheros del cliente, de modo que cuando iniciemos
+// el servidor, será como haber hecho un http-server ./client, sólo
+// que el servidor en este caso no será el que crea http-server, sino este
+// que programamos
+app.use(express.static(__dirname + '/client'));
 
-var authRouter = require('./routes/authenticate.router');
+// My routes
+app.use('/usuarios', routers.usuarios);
+app.use('/authenticate', routers.autenticacion);
 
-// Y los usamos para los caminos que toquen
-app.use('/authenticate', authRouter);
+// Todos los gets que no se hayan servido aún servirán la página web
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/client/views/index.html');
+});
 
-http.createServer(app).listen(8080);
+// Error 404 resource not found, si llega aqui querrá decir que nos estan pidiendo algo que no servimos
+app.all('*', function(req, res) {
+    res.status(404).send("Recurso no encontrado"); 
+});
+
+
+// Create the server and start listening
+
+http.createServer(app).listen(config.PORT);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
