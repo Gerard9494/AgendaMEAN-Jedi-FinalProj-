@@ -65,7 +65,7 @@ app.get('*', function(req, res) {
 
 // Error 404 resource not found, si llega aqui querrá decir que nos estan pidiendo algo que no servimos
 app.all('*', function(req, res) {
-    res.status(404).send("Recurso no encontrado"); 
+    res.status(404).send("Recurso no encontrado");
 });
 
 
