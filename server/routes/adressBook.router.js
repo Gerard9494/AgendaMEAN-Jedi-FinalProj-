@@ -17,17 +17,61 @@ var AdressBookModel = mongoose.model('AdressBookModel');
 router.use(express_jwt({ secret: config.JWT_SECRET, requestProperty: 'user' }));
 
 // Obtener agendas del usuario
-router.get('/agendas', function(req, res) {
+router.get('/adressBook', function(req, res) {
     UserModel.findOne({ name: req.user.name }, function(err, user) {
         if (err) res.status(500).json(err);
         else {
-            var adressBookList = [];
-
             AdressBookModel.find({ _id: {$in: user.adressBooks} }, function(err, agendas) {
                 if (err) res.status(500).json(err);
                 else res.status(200).json(agendas);
             });
-            res.status(200).json(user.adressBooks);
         }
     });
 });
+
+// Crear agenda
+router.post('/newAdressBook', function(req, res) {
+    var adressBookInstance = new AdressBookModel(req.body);
+    adressBookInstance.save(function(err, newAdressBookInstance) {
+        if (err) res.status(500).send(err);
+        else {
+            //ahora ya hemos creado la nueva agenda, entonces, vamos a añadirla al usuario
+            UserModel.update({name: req.user.name}, {$push: { adressBooks: newAdressBookInstance._id }}, function(err) {
+                if(!err) {
+                    res.status(200).end();
+                }
+            });
+        }
+    });
+});
+
+// Modificar agenda
+router.patch('/tareas/:id', function(req, res) {
+    //comprobar que el ususario tenga la agenda que quiere modificar
+    //modificar la agenda
+    UserModel.findOne({ name: req.user.name }, function(err, user) {
+        if (err) res.status(500).json(err);
+        else {
+            AdressBookModel.find({ _id: {$in: user.adressBooks} }, function(err, agendas) {
+                if (err) res.status(500).json(err);
+                else res.status(200).json(agendas);
+            });
+        }
+    });
+
+});
+
+// Borrar agenda
+
+
+
+
+
+
+
+
+
+
+
+
+
