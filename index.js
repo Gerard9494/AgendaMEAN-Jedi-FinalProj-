@@ -52,8 +52,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 
 // My routes
-app.use('/usuarios', routers.usuarios);
-app.use('/authenticate', routers.autenticacion);
+app.use('/register', routers.register);
+app.use('/authenticate', routers.authenticate);
+app.use('/user', routers.adressBook);
 
 // Todos los gets que no se hayan servido aún servirán la página web
 app.get('*', function(req, res) { res.sendFile(__dirname + '/client/views/index.html'); })
