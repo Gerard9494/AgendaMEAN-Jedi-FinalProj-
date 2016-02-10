@@ -6,11 +6,18 @@
   "dependencies": {
     "async": "^1.5.2",
     "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
     "coffee-script": "^1.10.0",
+    "colors": "^1.1.2",
+    "compression": "^1.6.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
     "express-jwt": "^3.3.0",
+    "express-winston": "^1.2.0",
     "fs": "0.0.2",
+    "http": "0.0.0",
     "jsonwebtoken": "^5.5.4",
-    "mongoose": "^4.4.1"
+    "mongoose": "^4.4.3"
   },
   "devDependencies": {},
   "scripts": {
