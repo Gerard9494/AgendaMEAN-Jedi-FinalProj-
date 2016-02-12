@@ -1,4 +1,4 @@
-angular.module('TareasApp').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+angular.module('ContactsApp').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $stateProvider
@@ -12,12 +12,6 @@ angular.module('TareasApp').config(['$stateProvider', '$urlRouterProvider', '$lo
                 templateUrl: 'views/partials/login.html',
                 url: '/login',
                 controller: 'LoginCtrl'
-            })
-            .state('tareas', {
-                parent: 'layout',
-                templateUrl: 'views/partials/tareas.html',
-                url: '/tareas',
-                controller: 'TareasCtrl'
             });
 
         // Cuando la ruta a la que acceda el usuario no sea ninguna
