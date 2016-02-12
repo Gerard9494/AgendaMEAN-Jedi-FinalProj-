@@ -1,32 +1,85 @@
-<div layout="column" flex id="content" role="main">
-  <md-content layout="vertical" flex id="content">
-    <div layout="row" layout-align="center center" layout-fill>
-      <md-whiteframe class="md-whiteframe-z1" layout="column" flex="30" layout-padding>
-        <md-content md-theme="docs-dark">
-          <form name="loginRegisterForm" layout="column" layout-align="center center">
-            <md-input-container>
-              <label>Username</label>
-              <input required="required" name="username" ng-model="user.username">
-              <div ng-messages="loginRegisterForm.username.$error" ng-if="loginRegisterForm.username.$dirty && loginRegisterForm.username.$invalid">
-                <div ng-message="required">Rellena el campo</div>
-              </div>
-            </md-input-container>
-            <md-input-container>
-              <label>Password</label>
-              <input required="required" name="password" ng-model="user.password" type="password">
-              <div ng-messages="loginRegisterForm.password.$error" ng-if="loginRegisterForm.password.$dirty && loginRegisterForm.password.$invalid">
-                <div ng-message="required">Rellena el campo</div>
-              </div>
-            </md-input-container>
-            <md-input-container layout-align="center center">
-              <div layout="row" layout-sm="column" layout-margin>
-                <md-button ng-disabled="loginRegisterForm.$invalid" class="md-raised" flex="50" flex-sm="100" ng-click="login()">Login</md-button>
-                <md-button ng-disabled="loginRegisterForm.$invalid" class="md-raised md-primary" flex="50" flex-sm="100" ng-click="register()">Registro</md-button>
-              </div>
-            </md-input-container>
-          </form>
-        </md-content>
-      </md-whiteframe>
-    </div>
-  </md-content>
-</div>
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+	<title>Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<!-- No se nos se -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-messages.js"></script>
+	<!-- Fi nosenose -->
+
+    <script src="login.js"></script>
+</head>
+
+<body ng-app='nuevaApp' ng-controller='nuevaAppCtrl'>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Contact<span>NOW</span></span></h1>
+		</div>
+		<form role="form" name="myForm">
+			<div class="login-box animated fadeInUp">
+				<div class="box-header">
+					<h2>Log In</h2>
+				</div>
+
+                <label for="username" >Username</label>
+				<br/>
+                <div class="form-group" ng-class="{ 'has-error': myForm.myUsername.$dirty && myForm.myUsername.$invalid}">
+                    <input type="text" placeholder="Username" name="myUsername" ng-model="username" id="username" required>
+                </div>
+                <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
+                  <h5 ng-show="myForm.myUsername.$error.required">El mail es obligatorio</h5>
+                  <h5 ng-show="myForm.myUsername.$error.email">El formato del mail no es correcto</h5>
+                </span>
+				<br/>
+
+				<label for="password">Password</label>
+				<br/>
+                <div class="form-group" ng-class="{ 'has-error': myForm.myPassword.$dirty && myForm.myPassword.$invalid}">
+                    <input type="password" ng-model="password" class="form-control input-lg" placeholder="Contraseña" name="myPassword" id="password" required>
+                </div>
+                <span class="text-danger" ng-show="myForm.myPassword.$dirty && myForm.myPassword.$invalid">
+                  <h5 ng-show="myForm.myEmail.$error.required">La contraseña es obligatoria</h5>
+                </span>
+				<br/>
+
+				<button ng-disabled="myForm.$invalid" type="submit" class="btn btn-lg btn-success btn-block" value="Entrar" ng-click="entrar()">Sign In</button>
+				<br/>
+				<a href="#"><p class="small">Don't you have an account?</p></a>
+			</div>
+		</form>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+
+</html>
