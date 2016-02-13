@@ -24,4 +24,20 @@ angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', 
             requireBase: false
         });
 
-    }]);
+    }
+]);
+
+// Un .run se ejecuta cuando la aplicación de angular se ha configurado y ya está corriendo
+angular.module('ContactNOWApp').run(['$rootScope', 'LoginService', '$state', function($rootScope, LoginService, $state) {
+    // Aquí le decimos que cuando se empiece a cambiar de estdo de ui-router
+    // Nos compruebe que el usuario está logueado, y si no lo está y el estado requiere
+    // autenticación (es diferente de login) entonces redireccionamos al estado login
+    // Esto hace que si el usuario no está logueado se le redireccione al login
+    // cuando por ejemplo acceda a /tareas
+    $rootScope.$on("$stateChangeStart", function(event, next) {
+        if (!LoginService.isLoggedIn() && next.name !== "login") {
+            event.preventDefault();
+            $state.go("login");
+        }
+    });
+}]);
