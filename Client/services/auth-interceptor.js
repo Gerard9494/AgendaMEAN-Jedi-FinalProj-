@@ -21,7 +21,7 @@
 // algo para lo que se requiere autenticación y no está autenticado, provocando
 // que el servidor responda con un error de autenticación. Si esto ocurre (status 401)
 // redirigimos al usuario a la vista de login
-angular.module('TareasApp').factory('authInterceptor', function ($q, $window, $injector) {
+angular.module('ContactNOWApp').factory('authInterceptor', function ($q, $window, $injector) {
     return {
         request: function (config) {
             // Si config.headers no está definido porque ningún otro interceptor
