@@ -8,7 +8,7 @@ var express_jwt = require('express-jwt');
 userRouter.post('/register', function(req, res, next) {
 
     // Comprobamos que nos ha indicado una contraseña y username
-    if (!req.body.username || !req.body.password || !req.body.mail) {
+    if (!req.body.username || !req.body.password || !req.body.email) {
         res.status(500).send("You have to write your email, password and username");
         return;
     }

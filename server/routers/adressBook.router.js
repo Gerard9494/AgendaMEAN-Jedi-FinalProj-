@@ -55,7 +55,7 @@ router.patch('/updateAdressBook/:id', function(req, res) {
     var abId = req.params.id;
     UserModel.findOne({ name: req.user.name }, function(err, user) {
         if (err) res.status(500).json(err);
-        else if (!user.adressBooks.contains(abId)) res.status(500).json("No tiene la agenda solicitada");
+        else if (!user.adressBooks.contains(abId)) res.status(500).json("You don't have that Adressbook");
         else {
             var abData = req.body;
             AdressBookModel.update({_id: abId}, {$set: abData}, function(err, agenda) {
@@ -143,7 +143,7 @@ router.delete('/deleteContact/:id', function(req, res) { //s'ha de borrar de tot
 
 
 // Si no ha entrado en ninguna ruta anterior, error 404 not found
-router.all('*', function(req, res) { res.status(404).send("Recurso no encontrado"); });
+router.all('*', function(req, res) { res.status(404).send("Error 404 not found"); });
 
 module.exports = router;
 

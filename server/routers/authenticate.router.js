@@ -26,7 +26,7 @@ authRouter.post('/login', function(req, res, next) {
         },
         function(user, callback) {
             // Si no existe respondemos con error
-            if (!user) res.status(404).send("El usuario no existe");
+            if (!user) res.status(404).send("This user doesn't exists");
             // Sino comparamos la contraseña `a pelo` que nos ha enviado el cliente
             // con la encriptada que habia en la BD
             else bcrypt.compare(password, user.password, callback); //esta funcion encripta el password, y luego lo
@@ -34,7 +34,7 @@ authRouter.post('/login', function(req, res, next) {
         },
         function(equalPasswords, callback) {
             // Si no son iguales respondemos con error
-            if (!equalPasswords) res.status(401).send("Contraseña incorrecta");
+            if (!equalPasswords) res.status(401).send("Wrong password");
             else {
                 // Si no creamos el token con info de username y password
                 // (no ponemos el array de tareas porque podría ser grande,
