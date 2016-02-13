@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/views/partials/login.html" afterPath="$PROJECT_DIR$/Client/views/partials/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/views/partials/signIn.html" afterPath="$PROJECT_DIR$/Client/views/partials/signIn.html" />
     </list>
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,21 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/views/partials/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="21" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.12345679">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signIn.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="signIn.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/views/partials/signIn.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.95884776">
-              <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -108,8 +109,8 @@
         <option value="$PROJECT_DIR$/Client/routing.js" />
         <option value="$PROJECT_DIR$/Client/partials/login.html" />
         <option value="$PROJECT_DIR$/Client/views/partials/layout.html" />
-        <option value="$PROJECT_DIR$/Client/views/partials/login.html" />
         <option value="$PROJECT_DIR$/Client/views/partials/signIn.html" />
+        <option value="$PROJECT_DIR$/Client/views/partials/login.html" />
       </list>
     </option>
   </component>
@@ -594,18 +595,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/views/partials/login.html">
+    <entry file="file://$PROJECT_DIR$/Client/views/partials/signIn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="21" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="7" />
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/views/partials/signIn.html">
+    <entry file="file://$PROJECT_DIR$/Client/views/partials/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95884776">
-          <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.12345679">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding />
         </state>
       </provider>
