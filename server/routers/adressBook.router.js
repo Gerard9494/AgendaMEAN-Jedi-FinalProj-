@@ -145,6 +145,8 @@ router.delete('/deleteContact/:id', function(req, res) { //s'ha de borrar de tot
 // Si no ha entrado en ninguna ruta anterior, error 404 not found
 router.all('*', function(req, res) { res.status(404).send("Recurso no encontrado"); });
 
+module.exports = router;
+
 
 
 
