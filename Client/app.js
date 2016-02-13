@@ -5,4 +5,4 @@
 var DEPENDENCIES = ['ngMaterial', 'ui.router'];
 
 // Y declaramos el módulo de nuestra aplicación
-angular.module('ContactsApp', DEPENDENCIES);
+angular.module('ContactNOWApp', DEPENDENCIES);

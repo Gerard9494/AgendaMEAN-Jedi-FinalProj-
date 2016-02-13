@@ -1,4 +1,4 @@
-angular.module('ContactsApp').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $stateProvider

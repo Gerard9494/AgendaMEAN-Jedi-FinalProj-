@@ -1,9 +1,9 @@
 var LayoutCtrl = function($scope, $state, LoginService) {
     $scope.pageName = function() {
         if ($state.includes('login')) return "Login";
-        else return "Listado de Tareas";
+        else return "Contacts List";
     };
 };
 
 
-angular.module('TareasApp').controller('LayoutCtrl', ['$scope', '$state', 'LoginService', LayoutCtrl]);
+angular.module('ContactNOWApp').controller('LayoutCtrl', ['$scope', '$state', 'LoginService', LayoutCtrl]);
