@@ -39,8 +39,7 @@
                    <input type="text" placeholder="Username" name="myUsername" ng-model="username" id="username" required>
                </div>
                <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
-                 <h5 ng-show="myForm.myUsername.$error.required">El mail es obligatorio</h5>
-                 <h5 ng-show="myForm.myUsername.$error.email">El formato del mail no es correcto</h5>
+                 <h5 ng-show="myForm.myUsername.$error.required">You have to write your username</h5>
                </span>
                <br/>
 
@@ -50,7 +49,7 @@
                    <input type="password" ng-model="password" class="form-control input-lg" placeholder="Contraseña" name="myPassword" id="password" required>
                </div>
                <span class="text-danger" ng-show="myForm.myPassword.$dirty && myForm.myPassword.$invalid">
-                 <h5 ng-show="myForm.myPassword.$error.required">La contraseña es obligatoria</h5>
+                 <h5 ng-show="myForm.myPassword.$error.required">You have to write your password</h5>
                </span>
                <br/>
 
