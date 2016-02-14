@@ -4,6 +4,10 @@ var LoginCtrl = function($scope, LoginService, ToastService, $state) {
         password: ''
     };
 
+    $scope.posaSignUp = function() {
+        $state.go('aboutPagina');
+    }
+
     $scope.login = function() {
         LoginService.login($scope.user)
             .then(function() {
