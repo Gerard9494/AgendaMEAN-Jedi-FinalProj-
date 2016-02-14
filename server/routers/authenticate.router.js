@@ -15,7 +15,7 @@ var UserModel = mongoose.model('UserModel');
  * usa este token para acceder a las rutas protegidas de la API, es decir,
  * aquellas que requieran de login.
  */
-authRouter.post('/login', function(req, res, next) {
+authRouter.post('/', function(req, res, next) {
     var name = req.body.name;
     var password = req.body.password;
 
