@@ -49,10 +49,9 @@
            <div class="form-group" ng-class="{ 'has-error': myForm.myUsername.$dirty && myForm.myUsername.$invalid}">
                <input type="text" placeholder="Username" name="myUsername" ng-model="username" id="username" required>
            </div>
-               <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
-                 <h5 ng-show="myForm.myUsername.$error.required">El mail es obligatorio</h5>
-                 <h5 ng-show="myForm.myUsername.$error.email">El formato del mail no es correcto</h5>
-               </span>
+                <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
+                     <h5 ng-show="myForm.myUsername.$error.required">You have to write your username</h5>
+                </span>
            <br/>
 
            <label for="password">Password</label>
@@ -64,7 +63,7 @@
                <input type="password" ng-model="password2" class="form-control input-lg" placeholder="Repeat your password" name="myPassword" id="password2" required>
            </div>
                <span class="text-danger" ng-show="myForm.myPassword.$dirty && myForm.myPassword.$invalid">
-                 <h5 ng-show="myForm.myPassword.$error.required">La contraseña es obligatoria</h5>
+                 <h5 ng-show="myForm.myPassword.$error.required">You have to write the password</h5>
                </span>
            <br/>
 
