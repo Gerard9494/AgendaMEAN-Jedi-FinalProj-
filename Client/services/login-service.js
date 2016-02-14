@@ -86,7 +86,7 @@ LoginService = function($http, $q, $window) {
         var q = $q.defer();
 
         // Post a /usuarios con body = objeto del usuario
-        $http.post(SERVER_URL_USERS, user)
+        $http.post(SERVER_URL_REGISTER, user)
             .then(
                 function(data) {
                     q.resolve();
