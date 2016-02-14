@@ -5,7 +5,7 @@ var LoginCtrl = function($scope, LoginService, ToastService, $state) {
     };
 
     $scope.posaSignUp = function() {
-        $state.go('aboutPagina');
+        $state.go('signUp');
     }
 
     $scope.login = function() {
