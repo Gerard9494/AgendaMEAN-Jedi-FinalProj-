@@ -12,7 +12,7 @@ angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', 
                 url: '/login',
                 controller: 'LoginCtrl'
             })
-            .state('login', {
+            .state('signUp', {
                 parent: 'layout',
                 templateUrl: 'views/partials/signUp.html',
                 url: '/signUp',

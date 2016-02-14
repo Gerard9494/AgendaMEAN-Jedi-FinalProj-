@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="" />
+    <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/routing.js" afterPath="$PROJECT_DIR$/client/routing.js" />
+    </list>
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +46,8 @@
       <file leaf-file-name="routing.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/routing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35856575">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.27888447">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -786,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/routing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35856575">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.27888447">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding />
         </state>
       </provider>
