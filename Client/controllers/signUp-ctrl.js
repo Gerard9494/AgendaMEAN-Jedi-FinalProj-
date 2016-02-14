@@ -13,14 +13,14 @@ var SignUpCtrl = function($scope, LoginService, ToastService, $state) {
             window.alert("The password aren not equals");
             $scope.user.password = '';
             $scope.password2 = '';
-        }
-        else {
+        } else {
             // Usamos nuestro servicio LoginService
             // Es asíncrono, por lo que debemos usar la promise, con
             // .then(funcion_todo_correcto, funcion_cuando_error)
             LoginService.register($scope.user)
                 .then(function() {
                     ToastService.showToast("Welcome " + $scope.user.username + ", you user has been created");
+                    console.log("usuari creat tio yeyeyeyee");
                 }, function(err) {
                     // Si ha habido error,
                     console.log(err);
@@ -30,7 +30,6 @@ var SignUpCtrl = function($scope, LoginService, ToastService, $state) {
                     // Y este es el estado cuando el error es mas general (no sabemos exactamente)
                     else if (err.status === 500) ToastService.showToast("An error occurred while creating your user, try it again, please");
                 });
-
             $state.go('login');
         }
     };
