@@ -19,8 +19,7 @@ var SignUpCtrl = function($scope, LoginService, ToastService, $state) {
             // .then(funcion_todo_correcto, funcion_cuando_error)
             LoginService.register($scope.user)
                 .then(function() {
-                    ToastService.showToast("Welcome " + $scope.user.username + ", you user has been created");
-                    console.log("usuari creat tio yeyeyeyee");
+                    ToastService.showToast("Your user has been created");
                 }, function(err) {
                     // Si ha habido error,
                     console.log(err);

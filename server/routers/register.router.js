@@ -5,15 +5,18 @@ var userRouter = require('express').Router();
 var jwt_secret = require('../config').jwt_secret;
 var express_jwt = require('express-jwt');
 
+var User = mongoose.model('UserModel');
+
+
 userRouter.post('/', function(req, res, next) {
 
     // Comprobamos que nos ha indicado una contraseña y username
-    if (!req.body.username || !req.body.password || !req.body.email) {
+    if (!req.body.name || !req.body.password || !req.body.email) {
         res.status(500).send("You have to write your email, password and username");
         return;
     }
 
-    bcrypt.hash(req.body.password, 12, function(error, contraseña_encriptada) {
+    bcrypt.hash(req.body.password, 12, function(err, contraseña_encriptada) {
         if (err) res.status(500).json(err);
         //guardem password encrpt.
         console.log("Contraseña encriptada: "+contraseña_encriptada);
@@ -29,7 +32,7 @@ userRouter.post('/', function(req, res, next) {
                 savedUser = savedUser.toObject();
                 delete savedUser.password;
                 // Devolvemos el documento guardado
-                res.status(200).json(saved_user);
+                res.status(200).json(savedUser);
             }
         });
 

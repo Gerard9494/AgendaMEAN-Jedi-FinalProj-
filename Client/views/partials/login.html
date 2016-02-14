@@ -12,7 +12,7 @@
            <label for="username" >Username</label>
            <br/>
            <div class="form-group" ng-class="{ 'has-error': myForm.myUsername.$dirty && myForm.myUsername.$invalid}">
-               <input type="text" placeholder="Username" name="myUsername" ng-model="username" id="username" required>
+               <input type="text" placeholder="Username" name="myUsername" ng-model="user.name" id="username" required>
            </div>
            <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
              <h5 ng-show="myForm.myUsername.$error.required">You have to write your username</h5>
@@ -22,7 +22,7 @@
            <label for="password">Password</label>
            <br/>
            <div class="form-group" ng-class="{ 'has-error': myForm.myPassword.$dirty && myForm.myPassword.$invalid}">
-               <input type="password" ng-model="password" class="form-control input-lg" placeholder="Contraseña" name="myPassword" id="password" required>
+               <input type="password" ng-model="user.password" class="form-control input-lg" placeholder="Contraseña" name="myPassword" id="password" required>
            </div>
            <span class="text-danger" ng-show="myForm.myPassword.$dirty && myForm.myPassword.$invalid">
              <h5 ng-show="myForm.myPassword.$error.required">You have to write your password</h5>
