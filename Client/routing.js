@@ -4,20 +4,20 @@ angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', 
             .state('layout', {
                 abstract: true,
                 templateUrl: '/views/partials/layout.html',
-                controller: 'layout-Ctrl'
+                controller: 'LayoutCtrl'
             })
             .state('login', {
                 parent: 'layout',
                 templateUrl: 'views/partials/login.html',
                 url: '/login',
-                controller: 'login-Ctrl'
+                controller: 'LoginCtrl'
+            })
+            .state('login', {
+                parent: 'layout',
+                templateUrl: 'views/partials/signUp.html',
+                url: '/signUp',
+                controller: 'SignUpCtrl'
             });
-        .state('login', {
-            parent: 'layout',
-            templateUrl: 'views/partials/signUp.html',
-            url: '/signUp',
-            controller: 'signUp-Ctrl'
-        });
 
         // Cuando la ruta a la que acceda el usuario no sea ninguna
         // de las definidas arriba, redirigimos al login
