@@ -17,6 +17,12 @@ angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', 
                 templateUrl: 'views/partials/signUp.html',
                 url: '/signUp',
                 controller: 'SignUpCtrl'
+            })
+            .state('adressBook', {
+                parent: 'layout',
+                templateUrl: 'views/partials/adressBook.html',
+                url: '/adressBook',
+                controller: 'AdressBookCtrl'
             });
 
         // Cuando la ruta a la que acceda el usuario no sea ninguna
