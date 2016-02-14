@@ -11,7 +11,7 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
 
             $scope.answer = function() {
                 // Usamos AdressBookService para añadir la tarea (asíncrono)
-                AdressBookService.addAdressBook({ titulo: $scope.titulo }).then(
+                AdressBookService.addAdressBook({ name: $scope.name }).then(
                     function() {
                         AdressBookService.showToast("The adress book has been crated");
                         $mdDialog.hide();
@@ -25,6 +25,7 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
         }]);
 
 var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog ) {
+    $scope.adressBookList = [];
 
     // Cuando se pulsa el boton de añadir tarea abrimos un dialog
     // con el servicio $mdDialog que nos da angular-material

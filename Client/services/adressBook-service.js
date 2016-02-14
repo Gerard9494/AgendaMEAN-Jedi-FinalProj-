@@ -10,25 +10,26 @@ AdressBookService = function($http, $q, $window) {
 
     var user = null;
 
-    this.getUser = function() {
-        // Si ya lo tenemos lo devolvemos, sino dejamos el trabajo a reloadUser,
-        // que lo va a obtener del servidor
+    this.anadirTarea = function(ab) {
         var q = $q.defer();
-        if (user) {
-            q.resolve(user);
-            return q.promise;
-        }
-        else return this.reloadUser();
-    }
 
-    this.getAdressBook = function () {
-        var user = null;
-        var q = $q.defer();
-        if (user) {
-            q.resolve(user);
-            return q.promise;
-        }
-        else return this.reloadUser();
+        // Post con primer parámetro la url, segundo el body, que será la tarea
+        $http.post(SERVER_URL_USERS + "/newAdressBook", ab)
+            .then(
+                function(data) {
+                    // La añadimos también en nuestro array
+                    // Como tareas compartirá referencia con $scope.tareas
+                    // en el controlador TareasCtrl, también se actualizará
+                    // en la vista el cambio, sin necesidad de hacer nada
+                    adressBookList.push(data.data);
+                    q.resolve();
+                },
+                function(err) {
+                    q.reject(err);
+                }
+            );
+
+        return q.promiseer();
     }
 
 }

@@ -1,6 +1,6 @@
 <center><h1 ng-if="mostrarMensajeNoTareas()">You don't have any adress book</h1></center>
 <md-list ng-cloak>
-    <md-list-item ng-repeat="ab in adressBooks">
+    <md-list-item ng-repeat="ab in adressBookList">
         <p> {{ ab.name }} </p>
         <!--
         <md-checkbox class="md-secondary" ng-model="tarea.completada" ng-change="actualizarTarea(tarea._id, tarea.completada)"></md-checkbox>
