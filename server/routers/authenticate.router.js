@@ -1,7 +1,8 @@
 // Necesitamos obtener el secret para poder generar el token
-var secret = require('../config').jwt_secret;
+var config = require('../config');
 var authRouter = require('express').Router();
 var async = require('async');
+var bcrypt = require('bcrypt');
 
 // Este módulo lo utilizaremos para generar el token
 var jwt = require('jsonwebtoken');
