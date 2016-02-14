@@ -39,7 +39,7 @@ angular.module('ContactNOWApp').run(['$rootScope', 'LoginService', '$state', fun
     // Esto hace que si el usuario no está logueado se le redireccione al login
     // cuando por ejemplo acceda a /tareas
     $rootScope.$on("$stateChangeStart", function(event, next) {
-        if (!LoginService.isLoggedIn() && next.name !== "login") {
+        if (!LoginService.isLoggedIn() && next.name !== "login" && next.name !== "signUp") {
             event.preventDefault();
             $state.go("login");
         }

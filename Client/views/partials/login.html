@@ -1,40 +1,39 @@
-<body ng-app='nuevaApp' ng-controller='nuevaAppCtrl'>
-   <div class="container">
-       <div class="top">
-           <h1 id="title" class="hidden"><span id="logo">Contact<span>NOW</span></span></h1>
-       </div>
-       <form role="form" name="myForm">
-           <div class="login-box animated fadeInUp">
-               <div class="box-header">
-                   <h2>Log In</h2>
-               </div>
 
-               <label for="username" >Username</label>
-               <br/>
-               <div class="form-group" ng-class="{ 'has-error': myForm.myUsername.$dirty && myForm.myUsername.$invalid}">
-                   <input type="text" placeholder="Username" name="myUsername" ng-model="username" id="username" required>
-               </div>
-               <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
-                 <h5 ng-show="myForm.myUsername.$error.required">You have to write your username</h5>
-               </span>
-               <br/>
-
-               <label for="password">Password</label>
-               <br/>
-               <div class="form-group" ng-class="{ 'has-error': myForm.myPassword.$dirty && myForm.myPassword.$invalid}">
-                   <input type="password" ng-model="password" class="form-control input-lg" placeholder="Contraseña" name="myPassword" id="password" required>
-               </div>
-               <span class="text-danger" ng-show="myForm.myPassword.$dirty && myForm.myPassword.$invalid">
-                 <h5 ng-show="myForm.myPassword.$error.required">You have to write your password</h5>
-               </span>
-               <br/>
-               <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-lg btn-success btn-block" value="Entrar" ng-click="entrar()">Sign In</button>
-               <br/>
-               <a href="" ng-click="posaSignUp()"><p class="small">Don't you have an account?</p></a>
-           </div>
-       </form>
+<div class="container">
+   <div class="top">
+       <h1 id="title" class="hidden"><span id="logo">Contact<span>NOW</span></span></h1>
    </div>
-</body>
+   <form role="form" name="myForm">
+       <div class="login-box animated fadeInUp">
+           <div class="box-header">
+               <h2>Log In</h2>
+           </div>
+
+           <label for="username" >Username</label>
+           <br/>
+           <div class="form-group" ng-class="{ 'has-error': myForm.myUsername.$dirty && myForm.myUsername.$invalid}">
+               <input type="text" placeholder="Username" name="myUsername" ng-model="username" id="username" required>
+           </div>
+           <span class="text-danger" ng-show="myForm.myUsername.$dirty && myForm.myUsername.$invalid">
+             <h5 ng-show="myForm.myUsername.$error.required">You have to write your username</h5>
+           </span>
+           <br/>
+
+           <label for="password">Password</label>
+           <br/>
+           <div class="form-group" ng-class="{ 'has-error': myForm.myPassword.$dirty && myForm.myPassword.$invalid}">
+               <input type="password" ng-model="password" class="form-control input-lg" placeholder="Contraseña" name="myPassword" id="password" required>
+           </div>
+           <span class="text-danger" ng-show="myForm.myPassword.$dirty && myForm.myPassword.$invalid">
+             <h5 ng-show="myForm.myPassword.$error.required">You have to write your password</h5>
+           </span>
+           <br/>
+           <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-lg btn-success btn-block" value="Entrar" ng-click="entrar()">Sign In</button>
+           <br/>
+           <a href="" ng-click="posaSignUp()"><p class="small">Don't you have an account?</p></a>
+       </div>
+   </form>
+</div>
 
 <script>
    $(document).ready(function () {
@@ -54,5 +53,3 @@
        $('label[for="password"]').removeClass('selected');
    });
 </script>
-
-</html>
