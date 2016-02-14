@@ -1,6 +1,5 @@
 angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
-
         $stateProvider
             .state('layout', {
                 abstract: true,
@@ -23,7 +22,6 @@ angular.module('ContactNOWApp').config(['$stateProvider', '$urlRouterProvider', 
             enabled: true,
             requireBase: false
         });
-
     }
 ]);
 
