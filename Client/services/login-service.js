@@ -7,7 +7,8 @@
 // para guardar el token cuando autentiquemos un usuario
 LoginService = function($http, $q, $window) {
     var SERVER_URL_AUTH = "http://localhost:8080/authenticate";
-    var SERVER_URL_USERS = "http://localhost:8080/usuarios";
+    var SERVER_URL_USERS = "http://localhost:8080/user";
+    var SERVER_URL_REGISTER = "http://localhost:8080/register";
 
     var user = null;
 
