@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="" />
+    <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routers/register.router.js" afterPath="$PROJECT_DIR$/server/routers/register.router.js" />
+    </list>
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login-service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/services/login-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6280992">
+            <state vertical-scroll-proportion="-16.88889">
               <caret line="90" column="29" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -51,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.router.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/routers/register.router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.13944224">
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -108,7 +120,6 @@
         <option value="$PROJECT_DIR$/Client/views/partials/login.html" />
         <option value="$PROJECT_DIR$/Client/views/partials/signUp.html" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/routers/register.router.js" />
         <option value="$PROJECT_DIR$/server/routers/adressBook.router.js" />
         <option value="$PROJECT_DIR$/server/routers/authenticate.router.js" />
         <option value="$PROJECT_DIR$/client/app.js" />
@@ -126,6 +137,7 @@
         <option value="$PROJECT_DIR$/client/views/partials/signUp.html" />
         <option value="$PROJECT_DIR$/client/controllers/signUp-ctrl.js" />
         <option value="$PROJECT_DIR$/client/services/login-service.js" />
+        <option value="$PROJECT_DIR$/server/routers/register.router.js" />
       </list>
     </option>
   </component>
@@ -734,14 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25896415">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37848607">
@@ -758,14 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routers/register.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/controllers/signUp-ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -776,8 +772,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/services/login-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6280992">
+        <state vertical-scroll-proportion="-16.88889">
           <caret line="90" column="29" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routers/register.router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13944224">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding />
         </state>
       </provider>
