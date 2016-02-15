@@ -25,48 +25,7 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
         }]);
 
 var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog ) {
-    $scope.adressBookList = [
-        {
-            name: "lel1",
-            contacts: [{
-                name: "premoh1",
-                tlf: 1
-            },
-                {
-                    name: "premoh1",
-                    tlf: 1
-                },
-                {
-                    name: "premoh1",
-                    tlf: 1
-                },
-                {
-                    name: "premoh1",
-                    tlf: 1
-                },
-                {
-                    name: "premoh1",
-                    tlf: 1
-                },
-                {
-                    name: "premoh1",
-                    tlf: 1
-                }]
-
-        },
-        {
-            name: "lel2",
-            contacts: []
-        },
-        {
-            name: "lel3",
-            contacts: []
-        },
-        {
-            name: "lel4",
-            contacts: []
-        }
-    ];
+    $scope.adressBookList = [];
     console.log("abans");
     console.log("despres");
 
