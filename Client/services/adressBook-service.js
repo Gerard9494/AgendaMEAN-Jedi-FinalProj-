@@ -10,7 +10,7 @@ AdressBookService = function($http, $q, $window) {
 
     var user = null;
 
-    this.anadirTarea = function(ab) {
+    this.addAdressBook = function(ab) {
         var q = $q.defer();
 
         // Post con primer parámetro la url, segundo el body, que será la tarea
@@ -21,6 +21,7 @@ AdressBookService = function($http, $q, $window) {
                     // Como tareas compartirá referencia con $scope.tareas
                     // en el controlador TareasCtrl, también se actualizará
                     // en la vista el cambio, sin necesidad de hacer nada
+                    console.log("estoy en adressBook-service y la data que pondre es->"+data);
                     adressBookList.push(data.data);
                     q.resolve();
                 },

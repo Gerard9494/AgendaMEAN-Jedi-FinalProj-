@@ -2,7 +2,7 @@
 angular.module('ContactNOWApp').controller('createAdressBookController',
     ['$scope', '$mdDialog', 'AdressBookService', 'ToastService',
         function ($scope, $mdDialog, AdressBookService, ToastService) {
-            $scope.titulo = '';
+            $scope.name = '';
 
             $scope.cancel = function() {
                 // Cierra el dialog
@@ -11,7 +11,7 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
 
             $scope.answer = function() {
                 // Usamos AdressBookService para añadir la tarea (asíncrono)
-                AdressBookService.addAdressBook({ name: $scope.name }).then(
+                AdressBookService.addAdressBook({ name: $scope.name, contacts: [] }).then(
                     function() {
                         AdressBookService.showToast("The adress book has been crated");
                         $mdDialog.hide();
@@ -25,7 +25,50 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
         }]);
 
 var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog ) {
-    $scope.adressBookList = [];
+    $scope.adressBookList = [
+        {
+            name: "lel1",
+            contacts: [{
+                name: "premoh1",
+                tlf: 1
+            },
+                {
+                    name: "premoh1",
+                    tlf: 1
+                },
+                {
+                    name: "premoh1",
+                    tlf: 1
+                },
+                {
+                    name: "premoh1",
+                    tlf: 1
+                },
+                {
+                    name: "premoh1",
+                    tlf: 1
+                },
+                {
+                    name: "premoh1",
+                    tlf: 1
+                }]
+
+        },
+        {
+            name: "lel2",
+            contacts: []
+        },
+        {
+            name: "lel3",
+            contacts: []
+        },
+        {
+            name: "lel4",
+            contacts: []
+        }
+    ];
+    console.log("abans");
+    console.log("despres");
 
     // Cuando se pulsa el boton de añadir tarea abrimos un dialog
     // con el servicio $mdDialog que nos da angular-material

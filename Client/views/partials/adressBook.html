@@ -1,12 +1,16 @@
-<center><h1 ng-if="mostrarMensajeNoTareas()">You don't have any adress book</h1></center>
-<md-list ng-cloak>
-    <md-list-item ng-repeat="ab in adressBookList">
-        <p> {{ ab.name }} </p>
-        <!--
-        <md-checkbox class="md-secondary" ng-model="tarea.completada" ng-change="actualizarTarea(tarea._id, tarea.completada)"></md-checkbox>
-        -->
-    </md-list-item>
-</md-list>
+<div class="login-box animated fadeInUp">
+    <center><h1 ng-if="mostrarMensajeNoTareas()">You don't have any adress book</h1></center>
+    <md-list ng-cloak>
+        <md-list-item ng-repeat="ab in adressBookList">
+            <div>
+                <p> {{ ab.name }} </p>
+                <md-list-item ng-repeat="c in ab.contacts">
+                    <p> {{ c.name }} </p>
+                </md-list-item>
+            </div>
+        </md-list-item>
+    </md-list>
+</div>
 
 
 <md-button class="md-fab md-primary" aria-label="Add adress book" ng-click="mostrarDialogAdress($event)" style="position: fixed; right: 50px; bottom: 50px;">
