@@ -25,7 +25,61 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
         }]);
 
 var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog ) {
-    $scope.adressBookList = [];
+    $scope.adressBookList = [
+        {
+            name: "Girona",
+            contacts: [
+                {
+                    name: "Nom1",
+                    apellidos: "Cognom1",
+                    compania: "x",
+                    telefono: 973231233,
+                    mail: "x@x.com"
+                },
+                {
+                    name: "Nom2",
+                    apellidos: "Cognom2",
+                    compania: "x",
+                    telefono: 973231233,
+                    mail: "x@x.com"
+                },
+                {
+                    name: "Nom3",
+                    apellidos: "Cognom3",
+                    compania: "x",
+                    telefono: 973231233,
+                    mail: "x@x.com"
+                },
+                {
+                    name: "Nom4",
+                    apellidos: "Cognom4",
+                    compania: "x",
+                    telefono: 973231233,
+                    mail: "x@x.com"
+                },
+                {
+                    name: "Nom5",
+                    apellidos: "Cognom5",
+                    compania: "x",
+                    telefono: 973231233,
+                    mail: "x@x.com"
+                }
+            ]
+
+        },
+        {
+            name: "Barcelona",
+            contacts: []
+        },
+        {
+            name: "Lleida",
+            contacts: []
+        },
+        {
+            name: "Tarragona",
+            contacts: []
+        }
+    ];
     console.log("abans");
     console.log("despres");
 

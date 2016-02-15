@@ -1,13 +1,58 @@
-<div class="login-box animated fadeInUp">
+<div class="box animated fadeInUp">
     <center><h1 ng-if="mostrarMensajeNoTareas()">You don't have any adress book</h1></center>
     <md-list ng-cloak>
         <md-list-item ng-repeat="ab in adressBookList">
             <div>
-                <p> {{ ab.name }} </p>
-                <md-list-item ng-repeat="c in ab.contacts">
-                    <p> {{ c.name }} </p>
-                </md-list-item>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <th> {{ ab.name }} </th>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>
+                                        <span style="padding-right:30px"></span>
+                                        Company
+                                    </th>
+                                    <th>
+                                        <span style="padding-right:30px"></span>
+                                        Phone
+                                    </th>
+                                    <th>
+                                        <span style="padding-right:30px"></span>
+                                        Email
+                                    </th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="c in ab.contacts">
+                                    <td>{{ c.name }} {{c.apellidos}}</td>
+                                    <td>
+                                        <span style="padding-right:30px"></span>
+                                        {{ c.compania }}
+                                    </td>
+                                    <td>
+                                        <span style="padding-right:30px"></span>
+                                        {{ c.telefono }}
+                                    </td>
+                                    <td>
+                                        <span style="padding-right:30px"></span>
+                                        {{ c.mail }}
+                                    </td>
+                                    <td>
+                                        <span style="padding-right:30px"></span>
+                                        <button type="submit" class="btn btn-lg btn-success btn-block" value="Login" ng-click="deleteContact($index)">Delete</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <span style="padding-bottom:100px"></span>
         </md-list-item>
     </md-list>
 </div>

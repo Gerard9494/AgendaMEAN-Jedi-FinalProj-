@@ -32,7 +32,6 @@ AdressBookService = function($http, $q, $window) {
 
         return q.promiseer();
     }
-
 }
 
 angular.module('ContactNOWApp').service('AdressBookService', ['$http', '$q', '$window', AdressBookService]);
