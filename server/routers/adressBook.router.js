@@ -19,14 +19,25 @@ var ContactModel = mongoose.model('ContactModel');
 // la info del usuario desencriptada
 router.use(express_jwt({ secret: config.JWT_SECRET, requestProperty: 'user' }));
 
-// Obtener agendas del usuario
-router.get('/adressBook', function(req, res) {
+// Obtener usuario
+router.get('/', function(req, res) {
     UserModel.findOne({ name: req.user.name }, function(err, user) {
+        if (err) res.status(500).json(err);
+        else res.status(200).json(user);
+    });
+});
+
+// Obtener agendas del usuario
+router.get('/getAdressBook', function(req, res) {
+    UserModel.findOne({ name: req.user.name }, function(err, user) {
+        console.log("ab->"+user.adressBooks);
         if (err) res.status(500).json(err);
         else {
             AdressBookModel.find({ _id: {$in: user.adressBooks} }, function(err, agendas) {
                 if (err) res.status(500).json(err);
-                else res.status(200).json(agendas); //devolvemos toda la info de las agendas que tiene el usuario
+                else {
+                    res.status(200).json(agendas);//devolvemos toda la info de las agendas que tiene el usuario
+                }
             });
         }
     });
@@ -34,14 +45,27 @@ router.get('/adressBook', function(req, res) {
 
 // Crear agenda
 router.post('/newAdressBook', function(req, res) {
-    var adressBookInstance = new AdressBookModel(req.body);
+    var aux = {"name": req.body.name};
+    var adressBookInstance = new AdressBookModel(aux);
     adressBookInstance.save(function(err, newAdressBookInstance) {
-        if (err) res.status(500).send(err);
-        else {
-            //ahora ya hemos creado la nueva agenda, entonces, vamos a añadirla al usuario
-            UserModel.update({name: req.user.name}, {$push: { adressBooks: newAdressBookInstance._id }}, function(err) {
-                if(!err) {
-                    res.status(200).end();
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            console.log("2");
+            var query = { name: req.user.name};
+            var update = { $push: { adressBooks: newAdressBookInstance._id } };
+
+            // Indica que queremos que el objeto que nos devuelva la callback (updated)
+            // sea el nuevo (después de haberle aplicado la actualización) y no el viejo
+            // Si no lo ponemos por defecto nos pone el viejo
+            var options = { 'new': true };
+
+            UserModel.findOneAndUpdate(query, update, options, function(err, updated) {
+                if (err) {
+                    res.status(500).json(err);
+                }
+                else {
+                    res.status(200).json(updated);
                 }
             });
         }

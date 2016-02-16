@@ -12,10 +12,10 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
             $scope.answer = function() {
                 // Usamos AdressBookService para añadir la tarea (asíncrono)
                 console.log("entro");
-                AdressBookService.addAdressBook({ name: $scope.name, contacts: [] }).then(
+                AdressBookService.addAdressBook({ name: $scope.name }).then(
                     function() {
                         console.log("añadimos");
-                        AdressBookService.showToast("The adress book has been crated");
+                        ToastService.showToast("The adress book has been crated");
                         $mdDialog.hide();
                     },
                     function(err) {
@@ -28,63 +28,15 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
         }]);
 
 var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog ) {
-    $scope.adressBookList = [
-        {
-            name: "Girona",
-            contacts: [
-                {
-                    name: "Nom1",
-                    apellidos: "Cognom1",
-                    compania: "x",
-                    telefono: 973231233,
-                    mail: "x@x.com"
-                },
-                {
-                    name: "Nom2",
-                    apellidos: "Cognom2",
-                    compania: "x",
-                    telefono: 973231233,
-                    mail: "x@x.com"
-                },
-                {
-                    name: "Nom3",
-                    apellidos: "Cognom3",
-                    compania: "x",
-                    telefono: 973231233,
-                    mail: "x@x.com"
-                },
-                {
-                    name: "Nom4",
-                    apellidos: "Cognom4",
-                    compania: "x",
-                    telefono: 973231233,
-                    mail: "x@x.com"
-                },
-                {
-                    name: "Nom5",
-                    apellidos: "Cognom5",
-                    compania: "x",
-                    telefono: 973231233,
-                    mail: "x@x.com"
-                }
-            ]
+    $scope.adressBookList = [];
 
-        },
-        {
-            name: "Barcelona",
-            contacts: []
-        },
-        {
-            name: "Lleida",
-            contacts: []
-        },
-        {
-            name: "Tarragona",
-            contacts: []
-        }
-    ];
-    console.log("abans");
-    console.log("despres");
+    AdressBookService.getAdressBook().then(function(ab) {
+        $scope.adressBookList = ab;
+
+        
+    }, function(err) {
+        ToastService.showToast("Se ha producido un error al cargar las adress book");
+    });
 
     // Cuando se pulsa el boton de añadir tarea abrimos un dialog
     // con el servicio $mdDialog que nos da angular-material
