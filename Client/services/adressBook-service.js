@@ -30,9 +30,26 @@ AdressBookService = function($http, $q, LoginService) {
 
     }
 
-    this.addAdressBook = function(ab) {
+    this.deleteAdressBook = function(ab) {
         var q = $q.defer();
 
+        $http.delete(SERVER_URL_USERS+"/deleteAdressBook", ab)
+            .then(
+                function() {
+                    // Y asignamos la variable local user a los datos obtenidos
+                    q.resolve();
+                },
+                function(err) {
+                    q.reject(err);
+                }
+            );
+
+        return q.promise;
+    }
+
+
+    this.addAdressBook = function(ab) {
+        var q = $q.defer();
         // Post con primer parámetro la url, segundo el body, que será la tarea
         $http.post(SERVER_URL_USERS + "/newAdressBook", ab)
             .then(
@@ -41,10 +58,6 @@ AdressBookService = function($http, $q, LoginService) {
                     // Como tareas compartirá referencia con $scope.tareas
                     // en el controlador TareasCtrl, también se actualizará
                     // en la vista el cambio, sin necesidad de hacer nada
-                    console.log("d->"+data);
-                    console.log("dd->"+data.data);
-                    console.log("ddn->"+data.data.name);
-
                     $http.get(SERVER_URL_USERS+"/getAdressBook")
                         .then(
                             function(data) {

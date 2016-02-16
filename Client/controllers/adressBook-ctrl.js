@@ -14,7 +14,6 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
                 console.log("entro");
                 AdressBookService.addAdressBook({ name: $scope.name }).then(
                     function() {
-                        console.log("añadimos");
                         ToastService.showToast("The adress book has been crated");
                         $mdDialog.hide();
                     },
@@ -32,11 +31,24 @@ var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog 
 
     AdressBookService.getAdressBook().then(function(ab) {
         $scope.adressBookList = ab;
-
-        
     }, function(err) {
         ToastService.showToast("Se ha producido un error al cargar las adress book");
     });
+
+    $scope.deleteAB = function (index) {
+        var nomAB = $scope.adressBookList[index].name;
+        AdressBookService.deleteAdressBook({ name: nomAB }).then(
+            function() {
+                ToastService.showToast("The adress book has been deleted");
+                $mdDialog.hide();
+            },
+            function(err) {
+                console.log("error");
+                ToastService.showToast("An error occurred while deleting the adress book, try it again, please");
+                $mdDialog.hide();
+            }
+        );
+    }
 
     // Cuando se pulsa el boton de añadir tarea abrimos un dialog
     // con el servicio $mdDialog que nos da angular-material

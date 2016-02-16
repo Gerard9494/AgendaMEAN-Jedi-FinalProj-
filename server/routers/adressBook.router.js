@@ -51,7 +51,6 @@ router.post('/newAdressBook', function(req, res) {
         if (err) {
             res.status(500).send(err);
         } else {
-            console.log("2");
             var query = { name: req.user.name};
             var update = { $push: { adressBooks: newAdressBookInstance._id } };
 
@@ -91,25 +90,33 @@ router.patch('/updateAdressBook/:id', function(req, res) {
 });
 
 // Borrar agenda
-router.delete('/deleteAdressBook/:id', function(req, res) {
-    var abId = req.params.id;
+router.delete('/deleteAdressBook', function(req, res) {
 
-    AdressBookModel.remove({_id: new ObjectId(abId)}, function(err){
-        if(!err) {
-            res.status(200).end();
-        } else {
-            var query = { name: req.usuario.name };
+    console.log("nom API->"+req.body);
 
-            // Eliminamos la agenda con _id = req.params.id
-            // del array de agendas del usuario
-            var update = { $pull: { "adressBooks._id": req.params.id } };
+    AdressBookModel.findOne({name: req.body.name}, function(err, agenda) {
+        console.log(agenda);
+        var id = agenda._id;
+        if (err) res.status(500).json(err);
+        else {
+            AdressBookModel.remove({name: req.body.name}, function(err){
+                if(!err) {
+                    res.status(200).end();
+                } else {
+                    var query = { name: req.user.name};
 
-            // Explicado más arriba
-            var options = { 'new': true };
+                    // Eliminamos la agenda con _id = req.params.id
+                    // del array de agendas del usuario
+                    var update = { $pull: { "adressBooks._id": id} };
 
-            UserModel.findOneAndUpdate(query, update, options, function(err, updated) {
-                if (err) res.status(500).json(err);
-                else res.status(200).json(updated);
+                    // Explicado más arriba
+                    var options = { 'new': true };
+
+                     UserModel.findOneAndUpdate(query, update, options, function(err, updated) {
+                         if (err) res.status(500).json(err);
+                         else res.status(200).json(updated);
+                     });
+                }
             });
         }
     });
