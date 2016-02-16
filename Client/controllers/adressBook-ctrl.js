@@ -11,12 +11,15 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
 
             $scope.answer = function() {
                 // Usamos AdressBookService para añadir la tarea (asíncrono)
+                console.log("entro");
                 AdressBookService.addAdressBook({ name: $scope.name, contacts: [] }).then(
                     function() {
+                        console.log("añadimos");
                         AdressBookService.showToast("The adress book has been crated");
                         $mdDialog.hide();
                     },
                     function(err) {
+                        console.log("error");
                         ToastService.showToast("An error occurred while creating the new adress book, try it again, please");
                         $mdDialog.hide();
                     }

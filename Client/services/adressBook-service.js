@@ -21,7 +21,7 @@ AdressBookService = function($http, $q, $window) {
                     // Como tareas compartirá referencia con $scope.tareas
                     // en el controlador TareasCtrl, también se actualizará
                     // en la vista el cambio, sin necesidad de hacer nada
-                    console.log("estoy en adressBook-service y la data que pondre es->"+data);
+                    console.log("estoy en adressBook-service y la data que pondre es->"+data.data);
                     adressBookList.push(data.data);
                     q.resolve();
                 },
@@ -30,7 +30,7 @@ AdressBookService = function($http, $q, $window) {
                 }
             );
 
-        return q.promiseer();
+        return q.promise;
     }
 }
 
