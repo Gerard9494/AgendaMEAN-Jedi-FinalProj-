@@ -72,34 +72,50 @@ router.post('/newAdressBook', function(req, res) {
 });
 
 // Modificar agenda
-router.patch('/updateAdressBook/:id', function(req, res) {
+router.patch('/updateAdressBook/:nameB/:nameA', function(req, res) {
     //comprobar que el ususario tenga la agenda que quiere modificar
     //modificar la agenda
-    var abId = req.params.id;
-    UserModel.findOne({ name: req.user.name }, function(err, user) {
+    var nB = req.params.nameB;
+    var nA = req.params.nameA;
+    console.log("nb->"+nB);
+    console.log("na->"+nA);
+    AdressBookModel.findOne({ name: nB }, function(err, agenda) {
         if (err) res.status(500).json(err);
-        else if (!user.adressBooks.contains(abId)) res.status(500).json("You don't have that Adressbook");
+        else if (agenda == null) res.status(150).json("This adressBook doesn't exists");
         else {
-            var abData = req.body;
-            AdressBookModel.update({_id: abId}, {$set: abData}, function(err, agenda) {
+            UserModel.findOne({ name: req.user.name }, function(err, user) {
                 if (err) res.status(500).json(err);
-                else res.status(200).json(agenda);
+                else {
+                    console.log("ag->"+agenda._id);
+
+                    var trobat = false;
+                    for (i = 0; i < user.adressBooks.length && !trobat && agenda._id!=null; i++) {
+                        trobat = (user.adressBooks[i].equals(agenda._id));
+                        //console.log(user.adressBooks[i]+"<-     ->");
+
+                    }
+                    if (!trobat) res.status(500).json("You don't have that Adressbook");
+                    else {
+                        AdressBookModel.update({name: nB}, {$set: {name: nA}}, function(err, agenda) {
+                            if (err) res.status(500).json(err);
+                            else res.status(200).json(agenda);
+                        });
+                    }
+                }
             });
         }
     });
 });
 
 // Borrar agenda
-router.delete('/deleteAdressBook', function(req, res) {
+router.delete('/deleteAdressBook/:name', function(req, res) {
 
-    console.log("nom API->"+req.body);
-
-    AdressBookModel.findOne({name: req.body.name}, function(err, agenda) {
+    AdressBookModel.findOne({name: req.params.name}, function(err, agenda) {
         console.log(agenda);
         var id = agenda._id;
         if (err) res.status(500).json(err);
         else {
-            AdressBookModel.remove({name: req.body.name}, function(err){
+            AdressBookModel.remove({name: req.params.name}, function(err){
                 if(!err) {
                     res.status(200).end();
                 } else {

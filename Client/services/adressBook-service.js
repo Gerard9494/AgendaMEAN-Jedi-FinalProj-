@@ -33,7 +33,7 @@ AdressBookService = function($http, $q, LoginService) {
     this.deleteAdressBook = function(ab) {
         var q = $q.defer();
 
-        $http.delete(SERVER_URL_USERS+"/deleteAdressBook", ab)
+        $http.delete(SERVER_URL_USERS + "/deleteAdressBook/" + ab.name)
             .then(
                 function() {
                     // Y asignamos la variable local user a los datos obtenidos
@@ -47,6 +47,25 @@ AdressBookService = function($http, $q, LoginService) {
         return q.promise;
     }
 
+
+    this.modifyAdressBook = function(before, after) {
+        var q = $q.defer();
+
+        // Petición patch al servidor, con la url como primer parámetro
+        // y el body que pasamos como segundo
+        // Notad que el token ya lo pondrá el servicio authInterceptor
+        $http.patch(SERVER_URL_USERS + "/updateAdressBook/" + before + "/" + after)
+            .then(
+                function(data) {
+                    q.resolve();
+                },
+                function(err) {
+                    q.reject(err);
+                }
+            );
+
+        return q.promise;
+    }
 
     this.addAdressBook = function(ab) {
         var q = $q.defer();
