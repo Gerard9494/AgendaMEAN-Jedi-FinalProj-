@@ -88,7 +88,7 @@ var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog 
     $scope.mostrarDialogAdress = function(event) {
         $mdDialog.show({
             controller: 'createAdressBookController',
-            templateUrl: 'views/partials/add-task.html',
+            templateUrl: 'views/partials/add-adressBook.html',
             parent: angular.element(document.body),
             targetEvent: event
         });
