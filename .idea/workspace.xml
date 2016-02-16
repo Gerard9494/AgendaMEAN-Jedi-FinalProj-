@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/services/adressBook-service.js" afterPath="$PROJECT_DIR$/client/services/adressBook-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routers/adressBook.router.js" afterPath="$PROJECT_DIR$/server/routers/adressBook.router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/controllers/adressBook-ctrl.js" afterPath="$PROJECT_DIR$/client/controllers/adressBook-ctrl.js" />
     </list>
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,21 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adressBook.router.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/routers/adressBook.router.js">
+      <file leaf-file-name="adressBook-ctrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/controllers/adressBook-ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7357238">
-              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adressBook-service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/services/adressBook-service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9163347">
+              <caret line="46" column="86" selection-start-line="46" selection-start-column="86" selection-end-line="46" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -105,9 +94,9 @@
         <option value="$PROJECT_DIR$/server/models/adressBook.model.js" />
         <option value="$PROJECT_DIR$/client/views/partials/modify-adressBook.html" />
         <option value="$PROJECT_DIR$/client/views/partials/adressBook.html" />
-        <option value="$PROJECT_DIR$/client/controllers/adressBook-ctrl.js" />
         <option value="$PROJECT_DIR$/server/routers/adressBook.router.js" />
         <option value="$PROJECT_DIR$/client/services/adressBook-service.js" />
+        <option value="$PROJECT_DIR$/client/controllers/adressBook-ctrl.js" />
       </list>
     </option>
   </component>
@@ -851,6 +840,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/partials/adressBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32921812">
+          <caret line="16" column="150" selection-start-line="16" selection-start-column="150" selection-end-line="16" selection-end-column="150" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/partials/modify-adressBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34979424">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/adressBook.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0996016">
@@ -859,10 +866,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/partials/adressBook.html">
+    <entry file="file://$PROJECT_DIR$/server/routers/adressBook.router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32921812">
-          <caret line="16" column="150" selection-start-line="16" selection-start-column="150" selection-end-line="16" selection-end-column="150" />
+        <state vertical-scroll-proportion="0.7357238">
+          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/services/adressBook-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99601597">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -878,36 +893,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/partials/modify-adressBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34979424">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/controllers/adressBook-ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45816734">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/services/adressBook-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routers/adressBook.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7357238">
-          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.9163347">
+          <caret line="46" column="86" selection-start-line="46" selection-start-column="86" selection-end-line="46" selection-end-column="86" />
           <folding />
         </state>
       </provider>

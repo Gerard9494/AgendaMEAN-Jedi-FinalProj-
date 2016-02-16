@@ -44,7 +44,7 @@ angular.module('ContactNOWApp').controller('modifyAdressBookController',
                         $mdDialog.hide();
                     },
                     function(err) {
-                        ToastService.showToast("An error occurred while creating the new adress book, try it again, please");
+                        ToastService.showToast("An error occurred while modifying the adress book or you don't have that adress book, so you can't modify it, try it again, please");
                         $mdDialog.hide();
                     }
                 );
