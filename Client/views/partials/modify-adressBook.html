@@ -1,0 +1,25 @@
+<md-dialog style="width: 450px;">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2>Modify adress book</h2><span flex="flex"></span>
+      <md-button ng-click="cancel()" class="md-icon-button" style="width: 100px;">
+        <md-icon class="material-icons">Exit</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <form name="adressBookForm" ng-submit="$event.preventDefault()" flex="flex" layout="row" layout-align="center center">
+      <md-input-container>
+        <label>Name</label>
+        <input required="required" name="name" ng-model="nameB">
+      </md-input-container>
+      <md-input-container>
+      <label>New Name</label>
+      <input required="required" name="name" ng-model="nameA">
+    </md-input-container>
+    </form>
+    <div layout="row" layout-align="center center" class="md-actions"><span flex="flex"></span>
+      <md-button ng-click="modify()" class="md-primary">Modify</md-button>
+    </div>
+  </md-dialog-content>
+</md-dialog>

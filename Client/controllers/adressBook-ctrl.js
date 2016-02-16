@@ -26,6 +26,36 @@ angular.module('ContactNOWApp').controller('createAdressBookController',
             }
         }]);
 
+angular.module('ContactNOWApp').controller('modifyAdressBookController',
+    ['$scope', '$mdDialog', 'AdressBookService', 'ToastService',
+        function ($scope, $mdDialog, AdressBookService, ToastService) {
+            $scope.nameB = '';
+            $scope.nameA = '';
+
+            $scope.cancel = function() {
+                // Cierra el dialog
+                $mdDialog.cancel();
+            }
+
+            $scope.modify = function() {
+                // Usamos AdressBookService para añadir la tarea (asíncrono)
+
+                var before = $scope.nameB;
+                var after = $scope.nameA;
+                AdressBookService.modifyAdressBook({ name: $scope.name }).then(
+                    function() {
+                        ToastService.showToast("The adress book has been crated");
+                        $mdDialog.hide();
+                    },
+                    function(err) {
+                        console.log("error");
+                        ToastService.showToast("An error occurred while creating the new adress book, try it again, please");
+                        $mdDialog.hide();
+                    }
+                );
+            }
+        }]);
+
 var AdressBookCtrl = function($scope, AdressBookService, ToastService,$mdDialog ) {
     $scope.adressBookList = [];
 

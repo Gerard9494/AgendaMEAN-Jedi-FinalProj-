@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/adressBook.model.js" afterPath="$PROJECT_DIR$/server/models/adressBook.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routers/adressBook.router.js" afterPath="$PROJECT_DIR$/server/routers/adressBook.router.js" />
-    </list>
+    <list default="true" id="ade07126-14bf-497f-8f78-10e06289932a" name="Default" comment="" />
     <ignored path="AgendaMEAN-Jedi-FinalProj-.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,9 +24,34 @@
       <file leaf-file-name="adressBook.router.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/routers/adressBook.router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3333334">
-              <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="122" selection-end-column="3" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-adressBook.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/views/partials/add-adressBook.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#0;n#div#0;n#md-toolbar#0;n#md-dialog#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modify-adressBook.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/views/partials/modify-adressBook.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,8 +59,8 @@
       <file leaf-file-name="adressBook-service.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/services/adressBook-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47277558">
-              <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.35325366">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -48,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/client/controllers/adressBook-ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
+              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -67,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/modelo_User.js" />
         <option value="$PROJECT_DIR$/models/UserModel.js" />
         <option value="$PROJECT_DIR$/routes/admin.js" />
         <option value="$PROJECT_DIR$/server.js" />
@@ -116,8 +137,9 @@
         <option value="$PROJECT_DIR$/server/models/adressBook.model.js" />
         <option value="$PROJECT_DIR$/client/views/partials/adressBook.html" />
         <option value="$PROJECT_DIR$/server/routers/adressBook.router.js" />
-        <option value="$PROJECT_DIR$/client/controllers/adressBook-ctrl.js" />
         <option value="$PROJECT_DIR$/client/services/adressBook-service.js" />
+        <option value="$PROJECT_DIR$/client/views/partials/modify-adressBook.html" />
+        <option value="$PROJECT_DIR$/client/controllers/adressBook-ctrl.js" />
       </list>
     </option>
   </component>
@@ -399,10 +421,7 @@
       <recent name="$PROJECT_DIR$/Client/views" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.add-adressBook.html">
-    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AgendaMEAN-Jedi-FinalProj-/Client/views/index.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.modify-adressBook.html">
     <configuration default="false" name="login.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AgendaMEAN-Jedi-FinalProj-/Client/views/partials/login.html">
       <method />
     </configuration>
@@ -413,6 +432,9 @@
       <method />
     </configuration>
     <configuration default="false" name="add-adressBook.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AgendaMEAN-Jedi-FinalProj-/client/views/partials/add-adressBook.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="modify-adressBook.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AgendaMEAN-Jedi-FinalProj-/client/views/partials/modify-adressBook.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -468,19 +490,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.layout.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.login.html (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.signUp.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.adressBook.html" />
-      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.add-adressBook.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.login.html (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.signUp.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.adressBook.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.add-adressBook.html" />
+      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.modify-adressBook.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.add-adressBook.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.adressBook.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.signUp.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.login.html (1)" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.modify-adressBook.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.add-adressBook.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.adressBook.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.signUp.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.login.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -869,17 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/partials/add-adressBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34979424">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-button#0;n#div#0;n#md-toolbar#0;n#md-dialog#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/partials/adressBook.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28806585">
@@ -890,24 +901,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routers/adressBook.router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3333334">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="122" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/partials/add-adressBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#0;n#div#0;n#md-toolbar#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/controllers/adressBook-ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/partials/modify-adressBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/services/adressBook-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47277558">
-          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.35325366">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
           <folding />
         </state>
       </provider>
